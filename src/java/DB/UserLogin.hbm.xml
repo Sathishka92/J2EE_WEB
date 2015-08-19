@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 19, 2015 2:29:07 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="DB.UserLogin" table="user_login" catalog="mobyerd">
+        <id name="iduserLogin" type="java.lang.Integer">
+            <column name="iduser_login" />
+            <generator class="identity" />
+        </id>
+        <property name="username" type="string">
+            <column name="username" length="100" />
+        </property>
+        <property name="password" type="string">
+            <column name="password" length="100" />
+        </property>
+    </class>
+</hibernate-mapping>

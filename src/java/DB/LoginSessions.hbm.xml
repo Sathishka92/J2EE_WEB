@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 19, 2015 2:29:07 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="DB.LoginSessions" table="login_sessions" catalog="mobyerd">
+        <id name="idloginSessions" type="java.lang.Integer">
+            <column name="idlogin_sessions" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="userReg" class="DB.UserReg" fetch="select">
+            <column name="User_reg_idUser" not-null="true" />
+        </many-to-one>
+        <property name="ipAddress" type="string">
+            <column name="ip_address" length="100" />
+        </property>
+        <property name="inTime" type="date">
+            <column name="in_time" length="10" />
+        </property>
+        <property name="outTime" type="date">
+            <column name="out_time" length="10" />
+        </property>
+    </class>
+</hibernate-mapping>

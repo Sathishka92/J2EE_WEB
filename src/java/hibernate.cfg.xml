@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/mobyerd?zeroDateTimeBehavior=convertToNull</property>
+    <property name="hibernate.connection.username">root</property>
+    <property name="hibernate.connection.password">9230</property>
+    <mapping resource="DB/Banners.hbm.xml"/>
+    <mapping resource="DB/LoginSessions.hbm.xml"/>
+    <mapping resource="DB/Privilages.hbm.xml"/>
+    <mapping resource="DB/Brand.hbm.xml"/>
+    <mapping resource="DB/Colour.hbm.xml"/>
+    <mapping resource="DB/Cart.hbm.xml"/>
+    <mapping resource="DB/UserType.hbm.xml"/>
+    <mapping resource="DB/UserReg.hbm.xml"/>
+    <mapping resource="DB/Os.hbm.xml"/>
+    <mapping resource="DB/Delivery.hbm.xml"/>
+    <mapping resource="DB/UserLogin.hbm.xml"/>
+    <mapping resource="DB/Comment.hbm.xml"/>
+    <mapping resource="DB/ProductReg.hbm.xml"/>
+    <mapping resource="DB/Memory.hbm.xml"/>
+    <mapping resource="DB/CartProductReg.hbm.xml"/>
+    <mapping resource="DB/Interfaces.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>

@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 19, 2015 2:29:07 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="DB.ProductReg" table="product_reg" catalog="mobyerd">
+        <id name="productid" type="java.lang.Integer">
+            <column name="productid" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="brand" class="DB.Brand" fetch="select">
+            <column name="Brand_idBrand" not-null="true" />
+        </many-to-one>
+        <many-to-one name="os" class="DB.Os" fetch="select">
+            <column name="OS_idOS" not-null="true" />
+        </many-to-one>
+        <many-to-one name="colour" class="DB.Colour" fetch="select">
+            <column name="Colour_idColour" not-null="true" />
+        </many-to-one>
+        <many-to-one name="memory" class="DB.Memory" fetch="select">
+            <column name="Memory_idMemory" not-null="true" />
+        </many-to-one>
+        <property name="productname" type="string">
+            <column name="Productname" length="120" />
+        </property>
+        <property name="price" type="java.lang.Double">
+            <column name="Price" precision="22" scale="0" />
+        </property>
+        <property name="quantity" type="java.lang.Integer">
+            <column name="Quantity" />
+        </property>
+        <property name="productimage" type="string">
+            <column name="Productimage" length="120" />
+        </property>
+        <property name="sim" type="string">
+            <column name="Sim" length="45" />
+        </property>
+        <property name="announced" type="string">
+            <column name="Announced" length="100" />
+        </property>
+        <property name="dispalysize" type="string">
+            <column name="Dispalysize" length="100" />
+        </property>
+        <property name="frontcamera" type="string">
+            <column name="Frontcamera" length="120" />
+        </property>
+        <property name="seconderycamera" type="string">
+            <column name="Seconderycamera" length="120" />
+        </property>
+        <property name="video" type="string">
+            <column name="Video" length="120" />
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="Status" />
+        </property>
+        <set name="cartProductRegs" table="cart_product_reg" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="product_reg_productid" not-null="true" />
+            </key>
+            <one-to-many class="DB.CartProductReg" />
+        </set>
+    </class>
+</hibernate-mapping>

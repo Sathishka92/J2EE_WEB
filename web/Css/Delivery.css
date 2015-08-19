@@ -1,0 +1,56 @@
+body{
+    background-color:#F6F6F6;	
+    margin:0px;
+    padding:0px;
+}
+
+#contentdiv{
+
+    width: 450px;
+    height: 185px;
+    margin-top: 10px;
+    margin-left: 15px;
+    -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
+    -moz-box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    background-color: #ffffff;
+    //border: 1px solid #000;
+
+
+
+
+}
+#contentdiv1{
+  width: 535px;
+    height: 255px;
+    margin-top: -400px;
+    margin-left: 15px;
+    -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
+    -moz-box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;   
+    float: right;
+    background-color: #ffffff;
+    
+}
+.button-success {
+    background: rgb(0, 112, 214); 
+    border: none;
+    color: white;
+    font-family: 'PT Sans Narrow', sans-serif;
+    cursor: pointer;
+    padding: 8px;
+    
+    /* this is a green */
+}
+#back{
+    
+    background-color: #ffffff;
+   margin-top: -20px;
+     
+}

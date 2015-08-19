@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 19, 2015 2:29:07 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="DB.UserReg" table="user_reg" catalog="mobyerd">
+        <id name="idUser" type="java.lang.Integer">
+            <column name="idUser" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="userType" class="DB.UserType" fetch="select">
+            <column name="user_type_iduser_type" not-null="true" />
+        </many-to-one>
+        <property name="username" type="string">
+            <column name="username" length="100" />
+        </property>
+        <property name="country" type="string">
+            <column name="country" length="100" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="100" />
+        </property>
+        <property name="password" type="string">
+            <column name="password" length="100" />
+        </property>
+        <property name="conPassword" type="string">
+            <column name="con_password" length="100" />
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="status" />
+        </property>
+        <set name="comments" table="comment" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="User_idUser" not-null="true" />
+            </key>
+            <one-to-many class="DB.Comment" />
+        </set>
+        <set name="carts" table="cart" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="User_idUser" not-null="true" />
+            </key>
+            <one-to-many class="DB.Cart" />
+        </set>
+        <set name="deliveries" table="delivery" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="User_reg_idUser" not-null="true" />
+            </key>
+            <one-to-many class="DB.Delivery" />
+        </set>
+        <set name="loginSessionses" table="login_sessions" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="User_reg_idUser" not-null="true" />
+            </key>
+            <one-to-many class="DB.LoginSessions" />
+        </set>
+    </class>
+</hibernate-mapping>

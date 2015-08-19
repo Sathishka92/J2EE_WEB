@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 19, 2015 2:29:07 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="DB.Cart" table="cart" catalog="mobyerd">
+        <id name="cartid" type="java.lang.Integer">
+            <column name="cartid" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="userReg" class="DB.UserReg" fetch="select">
+            <column name="User_idUser" not-null="true" />
+        </many-to-one>
+        <property name="productCount" type="java.lang.Integer">
+            <column name="product_count" />
+        </property>
+        <property name="totalAmount" type="java.lang.Double">
+            <column name="total_amount" precision="22" scale="0" />
+        </property>
+        <property name="dateTime" type="timestamp">
+            <column name="date_time" length="19" />
+        </property>
+        <set name="cartProductRegs" table="cart_product_reg" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Cart_cartid" not-null="true" />
+            </key>
+            <one-to-many class="DB.CartProductReg" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 19, 2015 2:29:07 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="DB.Brand" table="brand" catalog="mobyerd">
+        <id name="idBrand" type="java.lang.Integer">
+            <column name="idBrand" />
+            <generator class="identity" />
+        </id>
+        <property name="brand" type="string">
+            <column name="brand" length="45" />
+        </property>
+        <set name="productRegs" table="product_reg" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Brand_idBrand" not-null="true" />
+            </key>
+            <one-to-many class="DB.ProductReg" />
+        </set>
+    </class>
+</hibernate-mapping>

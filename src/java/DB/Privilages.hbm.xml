@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 19, 2015 2:29:07 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="DB.Privilages" table="privilages" catalog="mobyerd">
+        <id name="privilageid" type="java.lang.Integer">
+            <column name="privilageid" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="interfaces" class="DB.Interfaces" fetch="select">
+            <column name="interfaces_Interfaceid" not-null="true" />
+        </many-to-one>
+        <many-to-one name="userType" class="DB.UserType" fetch="select">
+            <column name="user_type_iduser_type" not-null="true" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

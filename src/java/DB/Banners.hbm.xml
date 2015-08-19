@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 19, 2015 2:29:07 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="DB.Banners" table="banners" catalog="mobyerd">
+        <id name="idBanners" type="java.lang.Integer">
+            <column name="idBanners" />
+            <generator class="identity" />
+        </id>
+        <property name="bannername" type="string">
+            <column name="Bannername" length="100" />
+        </property>
+        <property name="lastupdate" type="string">
+            <column name="Lastupdate" length="100" />
+        </property>
+        <property name="active" type="java.lang.Boolean">
+            <column name="active" />
+        </property>
+    </class>
+</hibernate-mapping>

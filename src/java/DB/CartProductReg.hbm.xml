@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 19, 2015 2:29:07 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="DB.CartProductReg" table="cart_product_reg" catalog="mobyerd">
+        <id name="cprId" type="java.lang.Integer">
+            <column name="cpr_id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="productReg" class="DB.ProductReg" fetch="select">
+            <column name="product_reg_productid" not-null="true" />
+        </many-to-one>
+        <many-to-one name="cart" class="DB.Cart" fetch="select">
+            <column name="Cart_cartid" not-null="true" />
+        </many-to-one>
+        <property name="quantity" type="java.lang.Double">
+            <column name="quantity" precision="22" scale="0" />
+        </property>
+        <property name="price" type="java.lang.Double">
+            <column name="price" precision="22" scale="0" />
+        </property>
+        <property name="isPurchase" type="java.lang.Integer">
+            <column name="isPurchase" />
+        </property>
+    </class>
+</hibernate-mapping>

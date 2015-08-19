@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-catalog="mobyerd"/>
+  <table-filter match-name="cart_product_reg"/>
+  <table-filter match-name="memory"/>
+  <table-filter match-name="login_sessions"/>
+  <table-filter match-name="colour"/>
+  <table-filter match-name="banners"/>
+  <table-filter match-name="brand"/>
+  <table-filter match-name="interfaces"/>
+  <table-filter match-name="user_login"/>
+  <table-filter match-name="user_reg"/>
+  <table-filter match-name="comment"/>
+  <table-filter match-name="cart"/>
+  <table-filter match-name="user_type"/>
+  <table-filter match-name="product_reg"/>
+  <table-filter match-name="privilages"/>
+  <table-filter match-name="os"/>
+  <table-filter match-name="delivery"/>
+</hibernate-reverse-engineering>
