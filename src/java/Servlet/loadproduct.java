@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package Servlet;
 
 import Connection.HibernateUtil;
@@ -39,8 +38,8 @@ public class loadproduct extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            
-           Session ss = HibernateUtil.getSessionFactory().openSession();
+
+            Session ss = HibernateUtil.getSessionFactory().openSession();
             Query qr = ss.createQuery("from ProductReg");
             List<ProductReg> pro = qr.list();
 
@@ -48,61 +47,56 @@ public class loadproduct extends HttpServlet {
             int x = 0;
 
             for (ProductReg p : pro) {
-                if(p.getStatus()==1){
-                if (x % 4 == 0) {
-                    
-                    
-                    t+=" <div style='background'  class=\"grid_1_of_4 images_1_of_4\">\n" +
-"                                          <a href=\"Product Preview.jsp?pid="+p.getProductid()+"\"><img src='"+p.getProductimage()+"'/></a>\n" +
-"                                           <h2>"+p.getProductname()+"</h2>\n" +
-"                                          <div class=\"price-details\">\n" +
-"                                         <div class=\"price-number\">\n" +  
-                            "        <h4><span  class=\"rupees\">&nbsp&nbsp&nbsp&nbsp&nbsp&nbspItem Left "+p.getQuantity()+"</span></h4>\n" +
-"                                                          <h4><span class=\"rupees\">&nbsp&nbsp&nbsp&nbsp&nbsp&nbspRs "+p.getPrice()+"</span></h4>\n" +
-                            "                               <h4><span  class=\"rupees\">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp &nbsp&nbsp Qty <input style='width:60px;' type='number' id='bqty"+x+"' value='1' max='"+p.getQuantity()+"' </span></h4><br>\n" +
-"                                              </div>\n" +
-"                                                          <div class=\"add-cart\">								\n" +
-"                                                                          <h4> <input  type='submit' value='Add to Cart' class=\"pure-button pure-button-primary\" onclick='buyingProduct("+x+")'></h4>\n" +
-"                                                               </div>\n" +
-                                                        "             <input type='hidden' value='"+p.getProductid()+"' id='pid"+x+"'/>                     " +
-"                                                           <div class=\"clear\"></div>\n"+
-"                                          </div>\n" +
-                            
-"                                      \n" +
-"                                  </div>";
+                if (p.getStatus() == 1) {
+                    if (x % 4 == 0) {
 
-                } else {
-                    
-                    
-                    t+=" <div  class=\"grid_1_of_4 images_1_of_4\">\n" +
-"                                          <a href=\"Product Preview.jsp?pid="+p.getProductid()+"\"><img src='"+p.getProductimage()+"'/></a>\n" +
-"                                           <h2>"+p.getProductname()+"</h2>\n" +
-"                                          <div class=\"price-details\">\n" +
-"                                         <div class=\"price-number\">\n" +  
-                            "        <h4><span class=\"rupees\">&nbsp&nbsp&nbsp&nbsp&nbsp&nbspItem Left "+p.getQuantity()+"</span></h4>\n" +
-"                                                          <h4><span class=\"rupees\">&nbsp&nbsp&nbsp&nbsp&nbsp&nbspRs "+p.getPrice()+"</span></h4>\n" +
-                            "                               <h4><span class=\"rupees\">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp &nbsp&nbsp Qty  <input style='width:60px;' type='number' id='bqty"+x+"' value='1' max='"+p.getQuantity()+"' </span></h4><br>\n" +
-"                                              </div>\n" +
-"                                                          <div class=\"add-cart\">								\n" +
-"                                                                          <h4> <input type='submit' value='Add to Cart' class=\"pure-button pure-button-primary\" onclick='buyingProduct("+x+")'></h4>\n" +
-"                                                               </div>\n" +
-                                                        "             <input type='hidden' value='"+p.getProductid()+"' id='pid"+x+"'/>                     " +
-"                                                           <div class=\"clear\"></div>\n"+
-"                                          </div>\n" +
-                            
-"                                      \n" +
-"                                  </div>";
+                        t += " <div style='background'  class=\"grid_1_of_4 images_1_of_4\">\n"
+                                + "                                          <a href=\"Product Preview.jsp?pid=" + p.getProductid() + "\"><img src='" + p.getProductimage() + "'/></a>\n"
+                                + "                                           <h2>" + p.getProductname() + "</h2>\n"
+                                + "                                          <div class=\"price-details\">\n"
+                                + "                                         <div class=\"price-number\">\n"
+                                + "        <h4><span  class=\"rupees\">&nbsp&nbsp&nbsp&nbsp&nbsp&nbspItem Left " + p.getQuantity() + "</span></h4>\n"
+                                + "                                                          <h4><span class=\"rupees\">&nbsp&nbsp&nbsp&nbsp&nbsp&nbspRs " + p.getPrice() + "</span></h4>\n"
+                                + "                               <h4><span  class=\"rupees\">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp &nbsp&nbsp Qty <input style='width:60px;' type='number' id='bqty" + x + "' value='1' max='" + p.getQuantity() + "' </span></h4><br>\n"
+                                + "                                              </div>\n"
+                                + "                                                          <div class=\"add-cart\">								\n"
+                                + "                                                                          <h4> <input  type='submit' value='Add to Cart' class=\"pure-button pure-button-primary\" onclick='buyingProduct(" + x + ")'></h4>\n"
+                                + "                                                               </div>\n"
+                                + "             <input type='hidden' value='" + p.getProductid() + "' id='pid" + x + "'/>                     "
+                                + "                                                           <div class=\"clear\"></div>\n"
+                                + "                                          </div>\n"
+                                + "                                      \n"
+                                + "                                  </div>";
 
+                    } else {
+
+                        t += " <div  class=\"grid_1_of_4 images_1_of_4\">\n"
+                                + "                                          <a href=\"Product Preview.jsp?pid=" + p.getProductid() + "\"><img src='" + p.getProductimage() + "'/></a>\n"
+                                + "                                           <h2>" + p.getProductname() + "</h2>\n"
+                                + "                                          <div class=\"price-details\">\n"
+                                + "                                         <div class=\"price-number\">\n"
+                                + "        <h4><span class=\"rupees\">&nbsp&nbsp&nbsp&nbsp&nbsp&nbspItem Left " + p.getQuantity() + "</span></h4>\n"
+                                + "                                                          <h4><span class=\"rupees\">&nbsp&nbsp&nbsp&nbsp&nbsp&nbspRs " + p.getPrice() + "</span></h4>\n"
+                                + "                               <h4><span class=\"rupees\">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp &nbsp&nbsp Qty  <input style='width:60px;' type='number' id='bqty" + x + "' value='1' max='" + p.getQuantity() + "' </span></h4><br>\n"
+                                + "                                              </div>\n"
+                                + "                                                          <div class=\"add-cart\">								\n"
+                                + "                                                                          <h4> <input type='submit' value='Add to Cart' class=\"pure-button pure-button-primary\" onclick='buyingProduct(" + x + ")'></h4>\n"
+                                + "                                                               </div>\n"
+                                + "             <input type='hidden' value='" + p.getProductid() + "' id='pid" + x + "'/>                     "
+                                + "                                                           <div class=\"clear\"></div>\n"
+                                + "                                          </div>\n"
+                                + "                                      \n"
+                                + "                                  </div>";
+
+                    }
+                    x++;
                 }
-                x++;
-            }
 
             }
             out.write(t);
 
         }
     }
-    
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

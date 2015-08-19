@@ -96,30 +96,58 @@
 
 
 
-<!-- This is the modal -->
-<div id="my-id" class="uk-modal">
-    <div class="uk-modal-dialog">
-        <a class="uk-modal-close uk-close"></a>
-        <div id="backg"><img src="Images/tnx.jpg"></div>
-        
-        
-        <a href="Homepage.jsp">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" style="width: 15%;"  value="ok" id="btnclr"></a>
-        
-        
-        <style type="text/css">
-            #backg{
-            width: auto;
-            height: auto;
-            padding: 22px;
-            color: #FFFFFF;
-            
-            
-                
-            }
-            
-        </style>
-    </div>
-</div>
+        <!-- This is the modal -->
+        <div id="my-id" class="uk-modal">
+            <div class="uk-modal-dialog">
+                <a class="uk-modal-close uk-close"></a>
+                <div id="backg"><h3>Thank You For Shopping With Us</h3><small id="clr_sm">Moby.LK</small></div>
+
+
+                <a href="Homepage.jsp">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" style="width: 35%;"  value="Go to Homepage" id="fl_btn"></a>
+
+
+                <style type="text/css">
+                    #backg{
+                        width: auto;
+                        height: auto;
+                        padding: 22px;
+                        color: #FFFFFF;
+                        margin-left: 150px;
+
+
+
+                    }
+                    #fl_btn
+                    {
+
+                        outline: none;
+                        border: none;
+                        padding:10px 50px;
+                        background: #00cd68;
+                        margin-left: 150px;
+                        width: 100%;
+                        cursor: pointer;
+                        font-size: 1em;
+                        color: white;
+                        border-radius: 3px;
+                        font-family: 'PT Sans Narrow', sans-serif;
+                        -webkit-border-radius:3px;
+                        -o-border-radius:3px;
+                        -moz-border-radius:3px;
+                        -ms-border-radius:3px;
+                        margin-right: 1%;	
+
+                    }
+
+                    #clr_sm{
+                        color: #000;
+                        font-size: 12px;
+
+                    }
+
+                </style>
+            </div>
+        </div>
         <div id="panel">
 
             <div id="namecon">imobile Checkout & Delivery From</div>
